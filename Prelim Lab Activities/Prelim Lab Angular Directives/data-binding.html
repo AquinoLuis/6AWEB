@@ -1,0 +1,160 @@
+<h1>{{ message }}</h1>
+
+<h2>{{ title }}</h2>
+<h3>{{ description }}</h3>
+
+<img [src]="imageUrl" [width]="w" [height]="h" class="center-image">
+
+<p [style.color]="textColor">This text is blue!</p>
+
+<p [class.highlighted]="isHighlighted">This text is highlighted!</p>
+
+<input [(ngModel)]="yourName" placeholder="Enter your name" class="input-field">
+<p>Hello, {{ yourName }}</p>
+
+<div style="display:flex; justify-content:center; gap:4px; margin-top:15px;">
+  <button (click)="increment()"
+          style="background-color: green; color: white; padding: 10px 18px; border: none; border-radius: 4px; cursor: pointer;">
+    Increment
+  </button>
+
+  <button (click)="decrement()"
+          style="background-color: orange; color: white; padding: 10px 18px; border: none; border-radius: 4px; cursor: pointer;">
+    Decrement
+  </button>
+</div>
+
+
+    <p>Count: {{ count }}</p>
+
+<h1>{{ studentName }}</h1>
+
+<section>
+  <h2>Property Binding</h2>
+  <img [src]="imageUrl1" width="200" class="center-image"/>
+  <br><br/>
+  <button [disabled]="isDisabled" class="btn submit">Submit</button>
+</section>
+
+<h2>Class Binding</h2>
+<p [class.passing]="isPassing" [class.failing]="!isPassing">
+  Student Result: {{ isPassing ? 'Passed' : 'Failed '}}
+</p>
+
+<h2>Style Binding</h2>
+<div
+  [style.background]="boxColor"
+  [style.width]="boxSize"
+  [style.height]="boxSize"
+  class="box">
+</div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #333;
+  }
+
+h1, h2, h3 {
+    margin: 10px 0;
+    font-weight: 600;
+    text-align: center;
+  }
+
+ .center-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+.center-image:hover {
+    transform: scale(1.05);
+  }
+ p {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+.highlighted {
+    background-color: yellow;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+.highlighted:hover {
+    background-color: gold;
+  }
+
+.input-field {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+.input-field:focus {
+    border-color: #007acc;
+    outline: none;
+  }
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    margin-top: 8px;
+    margin: 10px auto;
+  }
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+.increment {
+    background-color: green;
+    color: white;
+    display: inline-block;
+  }
+.decrement {
+    background-color: orange;
+    color: white;
+    margin-left: 10px;
+    display: inline-block;
+  }
+.submit {
+    background-color: #007acc;
+    color: white;
+    display: block;
+    margin: 10px auto;
+  }
+
+.passing {
+    color: green;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+.failing {
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+.box {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 20px auto;
+  }
+.box:hover {
+    transform: scale(1.05);
+  }
+</style>
