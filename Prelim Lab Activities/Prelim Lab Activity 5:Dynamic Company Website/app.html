@@ -1,0 +1,60 @@
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/employee">Employee</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/products">products</a>
+</nav>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet />
+
+<style>
+  nav {
+    background: linear-gradient(90deg, #ec7505, #dd470c);
+    padding: 25px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.2s ease, border-bottom 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+
+  }
+
+  nav a:hover {
+    color: #ffeb3b;
+    transform: translateY(-2px);
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffeb3b;
+    transition: width 0.3s ease;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+</style>
