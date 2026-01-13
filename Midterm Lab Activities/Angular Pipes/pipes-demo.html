@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 20px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #000; /* simple line */
+      font-size: 1.1rem;
+    }
+
+    .pipe-section {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    table td {
+      border: 1px solid #000;
+      padding: 6px 10px;
+      vertical-align: top;
+    }
+
+    pre {
+      border: 1px solid #000;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Titlecase Pipe -->
+  <div class="pipe-section">
+    <h3>Titlecase Pipe</h3>
+    <table>
+      <tr><td>Result</td><td>{{ name | titlecase }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Date Pipe -->
+  <div class="pipe-section">
+    <h3>Date Pipe</h3>
+    <table>
+      <tr><td>Raw date</td><td>{{ presentDate }}</td></tr>
+      <tr><td>Formatted date</td><td>{{ presentDate | date }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Date Pipe with Formats -->
+  <div class="pipe-section">
+    <h3>Date Pipe with Formats</h3>
+    <table>
+      <tr><td>Short date</td><td>{{ presentDate | date:'shortDate' }}</td></tr>
+      <tr><td>Full date</td><td>{{ presentDate | date:'fullDate' }}</td></tr>
+      <tr><td>Custom format (M/dd/yyyy)</td><td>{{ presentDate | date:'M/dd/yyyy' }}</td></tr>
+      <tr><td>Hours and minutes</td><td>{{ presentDate | date:'h:mm' }}</td></tr>
+      <tr><td>Note</td><td>Aquino, Luis Gabriel N.</td></tr>
+    </table>
+  </div>
+
+  <!-- Date Pipe with Case Transformation -->
+  <div class="pipe-section">
+    <h3>Date Pipe with Case Transformation</h3>
+    <table>
+      <tr><td>Uppercase full date</td><td>{{ presentDate | date:'fullDate' | uppercase }}</td></tr>
+      <tr><td>Lowercase medium date</td><td>{{ presentDate | date:'medium' | lowercase }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Async Pipe -->
+  <div class="pipe-section">
+    <h3>Async Pipe</h3>
+    <table>
+      <tr><td>Seconds changing in Time</td><td>{{ time$ | async | date:'mediumTime' }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Currency Pipe -->
+  <div class="pipe-section">
+    <h3>Currency Pipe</h3>
+    <table>
+      <tr><td>Custom currency</td><td>{{ price | currency:'Currency: P ':true }}</td></tr>
+      <tr><td>INR</td><td>{{ price | currency:'INR' }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Slice Pipe -->
+  <div class="pipe-section">
+    <h3>Slice Pipe</h3>
+    <table>
+      <tr><td>Start index</td><td>{{ Fruits | slice:2 }}</td></tr>
+      <tr><td>Start and end index</td><td>{{ Fruits | slice:1:4 }}</td></tr>
+      <tr><td>Negative index</td><td>{{ Fruits | slice:-2 }}</td></tr>
+      <tr><td>Negative start and end index</td><td>{{ Fruits | slice:-4:-2 }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Number Pipe -->
+  <div class="pipe-section">
+    <h3>Number Pipe</h3>
+    <table>
+      <tr><td>Format 3.1</td><td>{{ decimalNum1 | number:'3.1' }}</td></tr>
+      <tr><td>Format 2.1-4</td><td>{{ decimalNum1 | number:'2.1-4' }}</td></tr>
+    </table>
+  </div>
+
+  <!-- Percent Pipe -->
+  <div class="pipe-section">
+    <h3>Percent Pipe</h3>
+    <table>
+      <tr><td>Default format</td><td>{{ currentProgress | percent }}</td></tr>
+      <tr><td>Another value</td><td>{{ fullValue | percent }}</td></tr>
+    </table>
+  </div>
+
+  <!-- JSON Pipe -->
+  <div class="pipe-section">
+    <h3>JSON Pipe</h3>
+    <p>Object without JSON pipe:</p>
+    <div>{{ product }}</div>
+    <p>Object with JSON pipe (formatted):</p>
+    <pre>{{ product | json }}</pre>
+  </div>
+
+</body>
+</html>
