@@ -1,0 +1,35 @@
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  color: #000;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+h2 {
+  color: #000;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
