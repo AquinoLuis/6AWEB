@@ -1,0 +1,46 @@
+.table-container {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.highlight {
+  color: #6366f1;
+}
+
+.price {
+  color: #059669;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}

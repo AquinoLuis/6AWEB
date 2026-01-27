@@ -1,0 +1,47 @@
+<h2>User Directory</h2>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Username</th>
+        <th>Email Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of httpusers; track user.id) {
+        <tr>
+          <td><span class="badge">#{{ user.id }}</span></td>
+          <td class="bold">{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td class="highlight">{{ user.email }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<h2>Product Inventory</h2>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>SKU</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of httpproducts; track product.id) {
+        <tr>
+          <td>{{ product.id }}</td>
+          <td class="bold">{{ product.title }}</td>
+          <td class="price">${{ product.price }}</td>
+          <td><span class="badge">{{ product.category }}</span></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
