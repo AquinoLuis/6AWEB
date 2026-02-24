@@ -1,0 +1,96 @@
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 400px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.input-box, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.input-box:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-weight: 500;
+}
+
+
+.btn {
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
+.result-card {
+  background: #eaffea;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 400px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  border-left: 6px solid #3498db;
+}
+
+.result-card h3 {
+  margin-top: 0;
+  color: #3498db;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.result-card p {
+  margin: 8px 0;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.result-card strong {
+  color: #34495e;
+  display: inline-block;
+  width: 90px;
+}

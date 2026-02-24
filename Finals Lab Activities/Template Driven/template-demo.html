@@ -1,0 +1,48 @@
+<div class="card">
+  <h2>{{ title }}</h2>
+
+  <form (ngSubmit)="onSubmit()" #myform="ngForm">
+
+    <input class="input-box" type="text" name="username" [(ngModel)]="username" placeholder="Enter username" required>
+
+    <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="Enter email" required email>
+
+    <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="Enter password" required minlength="6">
+
+    <select class="input-box" name="role" [(ngModel)]="role" required>
+      <option value="" disabled selected>Select Role</option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+      <option value="guest">Guest</option>
+    </select>
+
+    <div class="radio-group">
+      <label>Gender:</label>
+      <label><input type="radio" name="gender" value="Male" [(ngModel)]="gender" required> Male</label>
+      <label><input type="radio" name="gender" value="Female" [(ngModel)]="gender" required> Female</label>
+    </div>
+
+    <div class="radio-group">
+      <label>Status:</label>
+      <label><input type="radio" name="status" value="Permanent" [(ngModel)]="status" required> Permanent</label>
+      <label><input type="radio" name="status" value="Probationary" [(ngModel)]="status" required> Probationary</label>
+    </div>
+
+    <textarea class="input-box" name="comments" [(ngModel)]="comments" placeholder="Comments (Notes)"></textarea>
+
+    <input class="btn" type="submit" value="Submit" [disabled]="!myform.valid">
+
+  </form>
+</div>
+
+@if (submitted) {
+  <div class="result-card">
+    <h3>Submission Successful!</h3>
+    <p><strong>Username:</strong> {{ submittedData.username }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Role:</strong> {{ submittedData.role }}</p>
+    <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
+    <p><strong>Status:</strong> {{ submittedData.status }}</p>
+    <p><strong>Comments:</strong> {{ submittedData.comments }}</p>
+  </div>
+}
