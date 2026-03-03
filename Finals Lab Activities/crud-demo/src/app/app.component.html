@@ -1,0 +1,59 @@
+<div class="main-wrapper">
+  <div class="info-section">
+    <h1>Manage Your <br> <span>Books</span> <br> Simply</h1>
+    <p class="subtitle">Add, edit, or remove books from your library with ease.</p>
+  </div>
+
+  <div class="form-section">
+    <h3>{{ isEditMode ? 'Modify Book Details' : 'Enter Book Details' }}</h3>
+
+    <div class="input-group">
+      <input id="newBook" type="text" placeholder="Book Title">
+    </div>
+
+    <div class="input-group">
+      <input id="newAuthor" type="text" placeholder="Author Name">
+    </div>
+
+    <div class="input-group">
+      <input id="newCategory" type="text" placeholder="Category">
+    </div>
+
+    <div class="input-group">
+      <input id="newPrice" type="number" placeholder="Price">
+    </div>
+
+    <div class="input-group">
+      <textarea id="newDesc" rows="2" placeholder="Description"></textarea>
+    </div>
+
+    <div class="button-row">
+      <button class="btn-main" (click)="saveBook()">
+        {{ isEditMode ? 'Save Changes' : 'Add Book' }}
+      </button>
+      <button *ngIf="isEditMode" class="btn-cancel" (click)="resetForm()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="results-container">
+  <div class="book-grid">
+    @for (book of books; track book.id) {
+      <div class="book-card">
+        <div class="card-header">
+          <span class="category-tag">{{ book.category || 'General' }}</span>
+          <span class="price-tag">${{ book.price }}</span>
+        </div>
+        <h4>{{ book.title }}</h4>
+        <p class="author">by {{ book.author || 'Unknown' }}</p>
+        <p class="description">{{ book.desc }}</p>
+        <div class="card-actions">
+          <button (click)="editBook(book)" class="edit-link">Edit</button>
+          <button (click)="deleteBook(book.id)" class="delete-link">Delete</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="empty-state">No books in your collection yet.</p>
+    }
+  </div>
+</div>
