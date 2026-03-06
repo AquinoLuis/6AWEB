@@ -1,0 +1,71 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e5e9f0;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* Make toggle text white so it's readable on the blue header */
+::ng-deep .theme-toggle .mdc-form-field {
+  color: white !important;
+}
+
+/* Dark Theme Overrides */
+.content.dark-theme {
+  background-color: #121212;
+}
+
+/* Let the dark theme penetrate the components */
+.content.dark-theme ::ng-deep .register-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.content.dark-theme ::ng-deep .section-title {
+  color: #e0e0e0;
+}
+
+.content.dark-theme ::ng-deep .identity-title,
+.content.dark-theme ::ng-deep .skill-label {
+  color: #ccc;
+}
+
+.content.dark-theme ::ng-deep .identity-toggle {
+  background-color: #2c2c2c;
+  border-color: #444;
+}
+
+.content.dark-theme ::ng-deep .mat-mdc-text-field-wrapper,
+.content.dark-theme ::ng-deep .mat-button-toggle-label-content {
+  color: #ccc;
+}
+
+.content.dark-theme ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-outline-color: #444;
+  --mdc-outlined-text-field-focus-outline-color: #3b4cca;
+  --mdc-outlined-text-field-hover-outline-color: #777;
+}
+
+.content.dark-theme ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: white;
+}
+
+.content.dark-theme ::ng-deep .output-container {
+  background-color: #222;
+  border-color: #444;
+  color: #00ff00; /* hacker green text for terminal feel in dark mode */
+}
