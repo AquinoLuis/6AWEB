@@ -1,0 +1,142 @@
+.register-card {
+  width: 500px;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden; /* So the header curve fits */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 0; /* Remove default padding so header spans full width */
+}
+
+.custom-header {
+  background-color: #3b4cca; /* Beautiful blue color */
+  color: white;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.custom-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.custom-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.custom-content {
+  padding: 2rem;
+}
+
+.section-title {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Material Field Overrides to match the clean outline look */
+::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-outline-color: #e0e0e0;
+  --mdc-outlined-text-field-focus-outline-color: #3b4cca;
+  --mdc-outlined-text-field-hover-outline-color: #bcbcbc;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+}
+
+/* Identity section */
+.identity-section {
+  margin-bottom: 1rem;
+}
+
+.identity-title {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.identity-toggle {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+::ng-deep .mat-button-toggle-label-content {
+  color: #555;
+}
+
+::ng-deep .mat-button-toggle-checked {
+  background-color: #e8eaf6 !important;
+}
+::ng-deep .mat-button-toggle-checked .mat-button-toggle-label-content {
+  color: #3b4cca;
+  font-weight: 500;
+}
+
+/* Skill section */
+.skill-section {
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-label {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+::ng-deep .mat-mdc-slider .mdc-slider__track--active_fill {
+  border-color: #3b4cca !important;
+}
+::ng-deep .mat-mdc-slider .mdc-slider__thumb-knob {
+  background-color: #3b4cca !important;
+  border-color: #3b4cca !important;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 1.5rem 0;
+  border-radius: 8px;
+  background-color: #3b4cca !important;
+  color: white !important;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(59, 76, 202, 0.3) !important;
+}
+
+/* Output container */
+.output-container {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.2rem;
+  font-family: monospace;
+  color: #333;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.output-container p {
+  margin: 0.3rem 0;
+}
